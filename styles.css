@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+:root {
+    --purple-50:hsl(260,100%,95%);
+    --purple-300:hsl(264,82%,80%);
+    --purple-500:hsl(263, 55%, 52%);
+    --white:#ffffff;
+    --gray-100:hsl(214, 17%, 92%);
+    --grey-200: hsl(0, 0%, 81%);
+    --grey-400: hsl(224, 10%, 45%);
+    --grey-500: hsl(217, 19%, 35%);
+    --dark-blue:hsl(219, 29%, 14%);
+    --black:hsl(0, 0%, 7%);
+    --box-shadow: 48px 64px 40px rgba(0, 0, 0, 0.16)
+}
+
+* {
+    margin: 0%
+}
+
+body {
+    font-family: 'Barlow Semi Condensed';
+    background-color: #f5f5f5f5;
+    font-size: 0.813rem;
+    line-height: 1.125rem;
+    max-height: 1000dvh;
+    display: flex;
+    justify-content: center;
+    padding: 200px 75px;
+}
+
+main {
+    max-width: 1114px;
+    width: 100%;
+    display: grid;
+    column-gap: 32px;
+    row-gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+    "purple-card purple-card gray-card white-card-2"
+    "white-card black-card black-card white-card-2";
+}
+
+h2 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 16px
+}
+
+.profile-info {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+}
+
+.profile-icon {
+    border-radius: 100%;
+    height: 28px;
+    border: 2px solid white;
+}
+
+.profile-name {
+    line-height: 1rem;
+}
+
+.profile-title {
+    font-size: 0.688rem;
+    line-height: 0.813rem;
+}
+
+/*CARDS*/
+
+.purple-card {
+    grid-area: purple-card;
+    background-color: var(--purple-500);
+    background-image: url(images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: top right 60px;
+    border-radius: 8px;
+    padding: 31px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: var(--purple-50);
+    box-shadow: var(--box-shadow);
+    h2 {
+        color: white;
+    }
+    .profile-icon {
+        border-color: var(--purple-300);
+    } 
+}
+
+.gray-card {
+    grid-area: gray-card;
+    background-color: var(--grey-500);
+    border-radius: 8px;
+    padding: 31px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: rgba(255, 255, 255, 0.75);
+    box-shadow: var(--box-shadow);
+    h2 {
+        color: white;
+    }
+}
+
+.white-card {
+    grid-area: white-card;
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 31px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: var(--grey-400);
+    box-shadow: var(--box-shadow);
+    h1 {
+        color: var(--grey-500)
+    }
+}
+
+.black-card {
+    grid-area: black-card;
+    background-color: var(--dark-blue);
+    border-radius: 8px;
+    padding: 31px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: var(--grey-200);
+    box-shadow: var(--box-shadow);
+    .profile-icon {
+        border-color: var(--purple-500);
+    }
+}
+
+.white-card-2 {
+    grid-area: white-card-2;
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 31px 32px 32px;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    color: var(--grey-400);
+    box-shadow: var(--box-shadow);
+    h1 {
+        color: var(--grey-500)
+    }
+}
+
+@media only screen and (max-width: 1152px) {
+    body {
+        padding: 0%;
+    }
+
+    main {
+        padding: 73px 35px;
+        gap: 32px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: 
+        "purple-card purple-card"
+        "gray-card white-card"
+        "black-card black-card"
+        "white-card-2 white-card-2";
+    }
+    
+}
+
+@media only screen and (max-width: 600px) {  
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .purple-card {
+        background-image: none;
+    }
+}
