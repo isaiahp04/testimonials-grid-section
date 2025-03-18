@@ -42,6 +42,11 @@ main {
     "white-card black-card black-card white-card-2";
 }
 
+h1 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+}
+
 h2 {
     font-size: 1.25rem;
     line-height: 1.5rem;
